@@ -1,4 +1,5 @@
 from datetime import datetime
+from time import sleep
 
 import requests
 
@@ -29,6 +30,7 @@ def run():
     while True:
         data = fetch()
         save(data)
+        sleep(conf.FETCH_PERIOD)
 
 
 if __name__ == '__main__':
